@@ -57,7 +57,7 @@ h4{
 p{
     margin-bottom: 1.25rem;
 }
-@media screen and (min-width=800px) {
+@media screen and (min-width: 800px) {
     h1{
         font-size: 4rem;
         line-height: 1;
@@ -96,6 +96,11 @@ p{
     color: var(--clr-primary);
     background-color: var(--clr-primary-light);
 }
+.clearfix::after, .clearfix::before{
+    content: '';
+    clear: both;
+    display: table;
+}
 /* /////header styling///// */
 .header{
     min-height: 100vh;
@@ -133,4 +138,44 @@ p{
 .content-divider{
     height: 0.5rem;
     background: linear-gradient(to left ,var(--clr-primary), #e9b949, var(--clr-primary));
+}
+/* /////skills///// */
+.skills{
+    background: var(--clr-grey-10);
+}
+.skill{
+    text-align: center;
+    padding: 2.5rem 0;
+    transition: var(--transition);
+}
+.skill-icon{
+    font-size: 2.5rem ;
+    margin-bottom: 1.25rem;
+    transition: var(--transition);
+    display: inline-block;
+    color: var(--clr-primary);
+}
+.skill-text{
+    color: var(--clr-grey-5);
+    max-width: 17rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+.skill:hover{
+    background: var(--clr-white);
+    box-shadow: 0 2px var(--clr-primary);
+}
+.skill:hover .skill-icon{
+    transform: translateY(-5px);
+}
+@media screen and (min-width : 576px){
+   .skill{
+    float: left;
+    width: 50%;
+   }
+}
+@media screen and (min-width : 576px){
+    .skill{
+     width: 25%;
+    }
 }
